@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Gift Registry</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Purchased</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.price }}</td>
+      <td>
+        <input type="checkbox" name="purchased" value="{{ item.name }}" {% if item.purchased %}checked{% endif %}>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <button onclick="updateRegistry()">Update Registry</button>
+{% endblock %}
