@@ -1,0 +1,8 @@
+sqlite3 gift_registry.db
+
+CREATE TABLE item (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  price REAL NOT NULL,
+  purchased BOOLEAN DEFAULT 0 NOT NULL
+);
