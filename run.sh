@@ -1,3 +1,3 @@
 export FLASK_APP=app
-export FLASK_ENV=development
-flask run
+# enable auto reload with --debug
+flask --debug run

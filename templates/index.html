@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
+
 {% block content %}
-  <h1>Welcome to the Gift Registry</h1>
-  <p>Use the navigation menu to view and update the registry.</p>
+  <h1>Welcome to the Gift Registry!</h1>
+  <p>Use the form below to add an item to the registry:</p>
+  <form id="add-item-form" action="/update-registry" method="post">
+    <label for="name">Item name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="price">Item price:</label><br>
+    <input type="number" id="price" name="price"><br>
+    <input type="submit" value="Add Item">
+  </form>
 {% endblock %}

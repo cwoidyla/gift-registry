@@ -1,21 +1,46 @@
 {% extends "layout.html" %}
 {% block content %}
   <h1>Gift Registry</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash-messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
   <table>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Purchased</th>
-    </tr>
-    {% for item in items %}
-    <tr>
-      <td>{{ item.name }}</td>
-      <td>{{ item.price }}</td>
-      <td>
-        <input type="checkbox" name="purchased" value="{{ item.name }}" {% if item.purchased %}checked{% endif %}>
-      </td>
-    </tr>
-    {% endfor %}
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Purchased</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>
+            {% if item.purchased %}
+              Yes
+            {% else %}
+              No
+            {% endif %}
+          </td>
+          <td>
+            {% if not item.purchased %}
+              <button class="mark-purchased-btn" data-item-id="{{ item.id }}">Mark as Purchased</button>
+            {% endif %}
+            <button class="delete-item-btn" data-item-id="{{ item.id }}">Delete</button>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
   </table>
-  <button onclick="updateRegistry()">Update Registry</button>
 {% endblock %}
