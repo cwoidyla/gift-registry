@@ -1,0 +1,69 @@
+# Introduction
+## Purpose: 
+- The purpose of this document is to specify the requirements for a gift registry web application.
+## Scope: 
+- The scope of this document includes the functional and non-functional requirements for the web application.
+## Definitions, acronyms, and abbreviations:
+- Gift registry: A web application that allows users to create a list of gift items and mark them as purchased.
+- User: A person who uses the gift registry web application.
+- Item: A gift item in the registry.
+- References: None.
+- Overview: The gift registry web application is a web-based tool that allows users to create a list of gift items and mark them as purchased. The application will have a simple user interface and will store the data in a SQLite database.
+# Overall Description
+## Product perspective: 
+- The gift registry web application is a standalone product that runs in a web browser.
+## Product functions: 
+- The web application will allow users to do the following:
+- View the list of gift items
+- Add new gift items to the list
+- Edit or delete existing gift items
+- Mark gift items as purchased
+## User characteristics: 
+- The web application is intended for use by general users who are comfortable using web-based applications. No special knowledge or skills are required to use the application.
+## Constraints: 
+- The web application must be compatible with modern web browsers and must work on desktop and mobile devices.
+## Assumptions and dependencies: 
+- The web application will be developed using Python, Flask, and SQLite.
+# Specific Requirements
+## External interface requirements:
+- The web application will have a simple user interface with a list of gift items, a form for adding or editing items, and buttons for marking items as purchased.
+- The web application will use the Flask web framework and will communicate with the SQLite database using Flask-SQLAlchemy.
+## Functional requirements:
+- The web application will display a list of gift items with the following information: name, price, and purchased status.
+- The web application will allow users to add new gift items to the list by entering the name and price.
+- The web application will allow users to edit or delete existing gift items.
+- The web application will allow users to mark gift items as purchased.
+## Performance requirements:
+- The web application should respond to user actions within 1 second.
+- The web application should be able to handle up to 1000 items in the list without significant performance degradation.
+## Design constraints:
+- The web application should be developed using Python 3.8 or higher.
+- The web application should use the Flask web framework and Flask-SQLAlchemy to communicate with the SQLite database.
+- The web application should use the Jinja2 template engine for rendering HTML.
+## Logical database requirements:
+- The web application will use a SQLite database to store the list of gift items.
+- The database will have a table named items with the following columns:
+id: an integer primary key column
+name: a text column for the name of the gift item
+price: a real column for the price of the gift item
+purchased: a boolean column for the purchased status of the gift item
+## Software system attributes:
+The web application will use responsive design to adapt to different screen sizes and devices.
+The web application will use AJAX requests to update the list of gift items without reloading the page.
+# Other Requirements
+## Safety: 
+- The web application should not pose any safety risks to users.
+## Security: 
+- The web application should protect against unauthorized access to the database and should use secure communication (HTTPS) to transmit data.
+## Software quality attributes:
+- The web application should be easy to use and understand.
+- The web application should be reliable and should not crash or produce errors.
+- The web application should be efficient and should not use excessive resources.
+## Project documentation:
+- The project should include a README.md file with instructions on how to install and run the web application.
+- The project should include a requirements.txt file with the list of required software and libraries.
+- The project should include inline documentation in the code.
+## Training: 
+- No training is required for users to use the web application.
+## Support: 
+- The web application should include a link to a support page or email address for users to report issues or request assistance.
